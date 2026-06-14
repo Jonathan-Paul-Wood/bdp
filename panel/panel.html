@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello World Panel</title>
+    <link rel="stylesheet" href="panel.css">
+  </head>
+  <body>
+    <main class="panel" aria-live="polite">
+      <h1 id="heading">hello world</h1>
+      <form id="hello-form" autocomplete="off">
+        <label class="field-label" for="hello-input">Message</label>
+        <div class="field-row">
+          <input id="hello-input" name="message" type="text" maxlength="80" required>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="panel.js"></script>
+  </body>
+</html>

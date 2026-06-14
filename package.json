@@ -1,0 +1,14 @@
+{
+  "name": "hello-world-firefox-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A secure Firefox WebExtension template with a native sidebar panel.",
+  "scripts": {
+    "check": "node scripts/check-extension.cjs",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^10.5.0",
+    "eslint-plugin-no-unsanitized": "^4.1.5"
+  }
+}
