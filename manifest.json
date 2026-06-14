@@ -27,5 +27,11 @@
       "id": "hello-world-panel@example.local",
       "strict_min_version": "109.0"
     }
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/read-page-content.js"]
+    }
+  ]
 }
