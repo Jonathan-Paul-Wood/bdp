@@ -126,3 +126,15 @@ button:active {
     background: #1d4ed8;
   }
 }
+
+#page-scraper {
+  margin: 0 auto 0 auto;
+}
+
+#extract-preview {
+  width: 95%;
+  min-height: 100px;
+  height: 30vh;
+  max-height: 500px;
+  overflow-y: scroll;
+}

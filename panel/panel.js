@@ -3,9 +3,29 @@
 const STORAGE_KEY = "helloPanelHeading";
 const DEFAULT_HEADING = "hello world";
 
+let pageDataExtractUrl = '';
+let pageDataExtractContent = 'No data yet';
+
 const heading = document.getElementById("heading");
 const form = document.getElementById("hello-form");
 const input = document.getElementById("hello-input");
+const preview = document.getElementById("extract-preview");
+const previewURL = document.getElementById("extract-url")
+
+browser.runtime.onMessage.addListener((message, sender) => {
+  preview.textContent = String(message.type);
+  if (message.type === "bdp_extract") {
+    console.log(sender)
+
+    pageDataExtractUrl = message.url;
+    pageDataExtractContent = message.article.trim();
+
+    preview.textContent = String(message.article.trim() || 'No extract availabel.').slice(0,200);
+    if (message.article.trim().length > 200) preview.textContent += '...';
+    previewURL.textContent = String(message.url || 'Error, no URL found');
+
+  }
+})
 
 function normalizeHeading(value) {
   const trimmed = String(value || "").trim();
