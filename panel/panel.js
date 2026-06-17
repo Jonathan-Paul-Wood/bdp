@@ -15,7 +15,6 @@ const previewURL = document.getElementById("extract-url")
 browser.runtime.onMessage.addListener((message, sender) => {
   preview.textContent = String(message.type);
   if (message.type === "bdp_extract") {
-    console.log(sender)
 
     pageDataExtractUrl = message.url;
     pageDataExtractContent = message.article.trim();
