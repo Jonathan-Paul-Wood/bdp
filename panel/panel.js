@@ -55,27 +55,29 @@ restoreHeading().catch((error) => {
   setHeading(DEFAULT_HEADING);
 });
 
-function openTab(evt, tabName) {
-  alert('hi')
 
-  // Get all elements with class="tabcontent" and hide them
-  const tabContent = document.getElementsByClassName("tabcontent");
-  tabContent.forEach((tab) => {
-    tab.style.display = "none";
+const tabs = document.getElementsByClassName('tablinks');
+
+for (let i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener('click', () => {
+    const focusTab = tabs[i].value;
+    alert(focusTab)
+
+    const tabContent = document.getElementsByClassName("tabcontent");
+    for(let j = 0; j < tabContent.length; j++) {
+      tabContent[j].style.display = "none"; // hide all tabs
+    }
+
+    const tabSelections = document.getElementsByClassName('tablinks');
+    for(let j = 0; j < tabSelections.length; j++) {
+      tabSelections[j].className = tabSelections[j].className.replace(" active", ""); // deactivate all tabs
+    }
+
+    document.getElementById(focusTab).style.display = "block"; // show current tab
+    tabs[i].className += " active"; // mark current tab as active
   })
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  const tabLinks = document.getElementsByClassName("tablinks");
-  tabLinks.forEach((link) => {
-    link.className = link.className.replace(" active", "");
-  })
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-} 
-
-function scrapeCurrentPage() {
-  alert('help')
-  setHeading(DEFAULT_HEADING);
 }
+
+document.getElementById("activate-scrape").addEventListener('click', () => {
+  alert('help');
+})

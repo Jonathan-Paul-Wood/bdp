@@ -9,10 +9,10 @@
   <body>
     <main class="panel" aria-live="polite">
       <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'main')">Magnify glass</button>
-        <button class="tablinks" onclick="openTab(event, 'saved')">Archive Box</button>
-        <button class="tablinks" onclick="openTab(event, 'prompts')">Bot head</button>
-        <button class="tablinks" onclick="openTab(event, 'settings')">Gear</button>
+        <button class="tablinks active" value="main">Magnify glass</button>
+        <button class="tablinks" value="saved">Archive Box</button>
+        <button class="tablinks" value="prompts">Bot head</button>
+        <button class="tablinks" value="settings">Gear</button>
       </div>
       <div id="main" class="tabcontent active" style="display: block">
         <h1 id="heading">hello world</h1>
@@ -24,7 +24,7 @@
           </div>
         </form>
         <div class="page-scraper">
-          <button id="activate-scrape" onclick="scrapeCurrentPage()">Read Page Article</button>
+          <button id="activate-scrape">Read Page Article</button>
         </div>
         <div id="extract-url"></div>
         <div id="extract-preview"></div>
