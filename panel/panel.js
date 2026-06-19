@@ -54,3 +54,28 @@ restoreHeading().catch((error) => {
   console.error("Unable to restore Hello World heading", error);
   setHeading(DEFAULT_HEADING);
 });
+
+function openTab(evt, tabName) {
+  alert('hi')
+
+  // Get all elements with class="tabcontent" and hide them
+  const tabContent = document.getElementsByClassName("tabcontent");
+  tabContent.forEach((tab) => {
+    tab.style.display = "none";
+  })
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  const tabLinks = document.getElementsByClassName("tablinks");
+  tabLinks.forEach((link) => {
+    link.className = link.className.replace(" active", "");
+  })
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+} 
+
+function scrapeCurrentPage() {
+  alert('help')
+  setHeading(DEFAULT_HEADING);
+}
