@@ -139,23 +139,35 @@ button:active {
   overflow-y: scroll;
 }
 
-.tab {
+.tabContainer {
   overflow: hidden;
   border: 1px solid #000000;
   border-radius: 0.5em;
+  display: flex;
+  justify-content: space-between;
 }
 
-.tab button {
+.tabContainer .tablinks {
   background-color: inherit;
   color: #000000;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 0.5em;
   transition: 0.3s;
 }
 
 .tabcontent {
   display: none;
+}
+
+.tablinks.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.tablinks:hover {
+  opacity: 0.2;
+  cursor: pointer;
 }

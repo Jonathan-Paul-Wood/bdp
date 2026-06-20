@@ -60,8 +60,9 @@ const tabs = document.getElementsByClassName('tablinks');
 
 for (let i = 0; i < tabs.length; i++) {
   tabs[i].addEventListener('click', () => {
-    const focusTab = tabs[i].value;
-    alert(focusTab)
+    console.log(tabs[i])
+    const focusTab = tabs[i].attributes.value.value;
+    console.log(focusTab)
 
     const tabContent = document.getElementsByClassName("tabcontent");
     for(let j = 0; j < tabContent.length; j++) {
@@ -80,4 +81,5 @@ for (let i = 0; i < tabs.length; i++) {
 
 document.getElementById("activate-scrape").addEventListener('click', () => {
   alert('help');
+  console.log(apiKey);
 })
