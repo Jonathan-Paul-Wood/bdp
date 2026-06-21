@@ -9,11 +9,11 @@
   <body>
     <main class="panel" aria-live="polite">
       <div class="tabContainer">
-        <div class="tablinks active" value="main" title="Analysis Portal">Magnify</div>
-        <div class="tablinks" value="saved" title="Saved Articles">Archive</div>
-        <div class="tablinks" value="prompts" title="Manage Prompts">Bot head</div>
-        <div class="tablinks" value="key" title="API Key">Key</div>
-        <div class="tablinks" value="settings" title="Settings">Gear</div>
+        <div class="tablinks active" value="main" title="Analysis Portal"><img src="../icons/magnify.svg" alt="Analysis Portal" /></div>
+        <div class="tablinks" value="saved" title="Saved Articles"><img src="../icons/archive.svg" alt="Saved Articles" /></div>
+        <div class="tablinks" value="prompts" title="Manage Prompts"><img src="../icons/bot.svg" alt="Manage Prompts" /></div>
+        <div class="tablinks" value="key" title="API Key"><img src="../icons/key.svg" alt="API Key" /></div>
+        <div class="tablinks" value="about" title="About"><img src="../icons/info.svg" alt="About" /></div>
       </div>
       <div id="contentContainer">
         <div id="main" class="tabcontent" style="display: block">
@@ -40,7 +40,12 @@
             Don't yet have a key? Get one <a href="https://deepinfra.com/">here</a>
           </div>
         </div>
-        <div id="settings" class="tabcontent" style="display: none">api et al</div>
+        <div id="about" class="tabcontent" style="display: none">
+          <h1>Documentation</h1>
+          <p>Full documentation is available at <a target="_blank" href="https://github.com/Jonathan-Paul-Wood/bdp">github</a></p>
+          <p>Licensed under CC-BY-NC-SA-4.0</p>
+          <img src="../icons/bdp-logo.png" alt="Bias Detection Panel" style="width: 100%; margin-top: 20px;" />
+        </div>
       </div>
     </main>
     <script src="panel.js"></script>

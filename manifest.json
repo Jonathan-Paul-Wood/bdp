@@ -1,20 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Hello World Isolated Panel",
+  "name": "Bias Detection Panel",
   "version": "0.1.0",
-  "description": "A Firefox WebExtension template with an isolated native sidebar panel.",
+  "description": "A Firefox WebExtension to help you detect bias.",
   "permissions": [
     "activeTab",
     "storage"
   ],
   "browser_action": {
-    "default_title": "Open Hello World sidebar",
-    "default_icon": "icons/hello.svg"
+    "default_title": "Bias Detection Panel",
+    "default_icon": "icons/bdp-logo.png"
   },
   "sidebar_action": {
-    "default_title": "Hello World",
+    "default_title": "Bias Detection Panel",
     "default_panel": "panel/panel.html",
-    "default_icon": "icons/hello.svg"
+    "default_icon": "icons/bdp-logo.png"
   },
   "background": {
     "scripts": [
@@ -24,7 +24,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "hello-world-panel@example.local",
+      "id": "bias-detection-panel@example.local",
       "strict_min_version": "109.0"
     }
   },

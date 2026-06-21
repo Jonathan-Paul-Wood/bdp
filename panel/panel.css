@@ -162,6 +162,15 @@ button:active {
   display: none;
 }
 
+.tablinks img {
+  width: 20px;
+  height: 20px;
+}
+
+.tablinks.active img {
+  color: white;
+}
+
 .tablinks.active {
   background-color: #2563eb;
   color: white;

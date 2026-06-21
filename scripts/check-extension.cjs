@@ -12,7 +12,12 @@ const requiredFiles = [
   "panel/panel.html",
   "panel/panel.css",
   "panel/panel.js",
-  "icons/hello.svg"
+  "icons/bias-detection.png",
+  "icons/archive.svg",
+  "icons/bot.svg",
+  "icons/info.svg",
+  "icons/key.svg",
+  "icons/magnify.svg"
 ];
 const javascriptFiles = [
   "background.js",
