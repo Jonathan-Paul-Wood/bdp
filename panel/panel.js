@@ -1,28 +1,31 @@
 "use strict";
 
-const STORAGE_KEY = "helloPanelHeading";
+const STORAGE_KEY = "BDP_HEADING";
 const DEFAULT_HEADING = "hello world";
 
-let pageDataExtractUrl = '';
-let pageDataExtractContent = 'No data yet';
+var pageDataExtractUrl = '';
+var pageDataExtractContent = 'No data yet';
 
 const heading = document.getElementById("heading");
 const form = document.getElementById("hello-form");
 const input = document.getElementById("hello-input");
-const preview = document.getElementById("extract-preview");
-const previewURL = document.getElementById("extract-url")
 
 browser.runtime.onMessage.addListener((message, sender) => {
-  preview.textContent = String(message.type);
   if (message.type === "bdp_extract") {
+    console.log('bdp_extract message received');
+    resetBiasResults();
 
     pageDataExtractUrl = message.url;
     pageDataExtractContent = message.article.trim();
 
-    preview.textContent = String(message.article.trim() || 'No extract availabel.').slice(0,200);
-    if (message.article.trim().length > 200) preview.textContent += '...';
-    previewURL.textContent = String(message.url || 'Error, no URL found');
-
+    const analyzeButton = document.getElementById("analyze-page");
+    if (pageDataExtractContent && pageDataExtractContent.length !== 'No data yet') {
+      analyzeButton.disabled = false;
+      analyzeButton.tooltip = "Click to analyze the page for bias";
+    } else {
+      analyzeButton.disabled = true;
+      analyzeButton.tooltip = "No data found to analyze. Perhaps this page has no article? If you think this is a mistake please open an Issue on the GitHub.";
+    }
   }
 })
 
@@ -78,8 +81,3 @@ for (let i = 0; i < tabs.length; i++) {
     tabs[i].className += " active"; // mark current tab as active
   })
 }
-
-document.getElementById("activate-scrape").addEventListener('click', () => {
-  alert('help');
-  console.log(apiKey);
-})

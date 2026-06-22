@@ -1,5 +1,5 @@
 const url = window.location.toString().split('?')[0];
-let article = document.getElementsByTagName('article')[0].outerHTML || null;
+let article = document.getElementsByTagName('article')[0]?.outerHTML || null;
 
 if (!article) {
     article = document.body.textContent.replace('/[\n\t]{2,}/g', '\n')

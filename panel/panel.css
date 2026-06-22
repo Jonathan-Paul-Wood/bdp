@@ -127,7 +127,7 @@ button:active {
   }
 }
 
-#page-scraper {
+#page-analyzer {
   margin: 0 auto 0 auto;
 }
 
@@ -179,4 +179,11 @@ button:active {
 .tablinks:hover {
   opacity: 0.2;
   cursor: pointer;
+}
+
+.split-panel {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000000;
+  border-radius: 0.5em;
 }
